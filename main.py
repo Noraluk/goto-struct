@@ -29,7 +29,7 @@ def to_go_struct(obj):
             a = to_go_struct(value)
             value_type += "{}}}".format(a)
         else:
-            value_type += "*map[string]interface{}"
+            value_type += "interface{}"
 
         struct_string += '{} {} `json:"{}"`\n'.format(camel_key, value_type, key)
     return struct_string
